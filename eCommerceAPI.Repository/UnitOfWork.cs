@@ -22,9 +22,9 @@ namespace eCommerceAPI.Repository
             _brandRepository = new Lazy<IBrandRepository>(() => new BrandRepository(_dbContext));
         }
 
-        public ICategoryRepository Category { get; set; }
-        public IProductRepository Product { get; set; }
-        public IBrandRepository Brand { get; set; }
+        public ICategoryRepository Category => _categoryRepository.Value;
+        public IProductRepository Product => _productRepository.Value;
+        public IBrandRepository Brand => _brandRepository.Value;
 
         public async Task SaveAsync() => await _dbContext.SaveChangesAsync();
     }

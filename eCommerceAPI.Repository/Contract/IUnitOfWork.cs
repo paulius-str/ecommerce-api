@@ -8,9 +8,9 @@ namespace eCommerceAPI.Repository.Contract
 {
     public interface IUnitOfWork
     {
-        ICategoryRepository Category { get; set; }
-        IProductRepository Product { get; set; }
-        IBrandRepository Brand { get; set; }
+        ICategoryRepository Category { get; }
+        IProductRepository Product { get; }
+        IBrandRepository Brand { get; }
         Task SaveAsync();
     }
 }
